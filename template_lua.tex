@@ -1,0 +1,77 @@
+% 卒業研究前刷テンプレート
+% lualatex用
+
+\RequirePackage{plautopatch}
+
+\documentclass[a4paper,10pt]{ltjsarticle}
+\usepackage{luatexja}
+
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage{flushend}
+\usepackage{graphicx}
+\usepackage{here}
+
+\geometry{
+top=20mm,
+bottom=20mm,
+left=20mm,
+right=20mm
+}
+\setlength{\columnsep}{7.5mm}
+
+\setlength{\baselineskip}{14pt}
+\setlength{\parindent}{1\zw}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1\zw}{}
+\titlespacing{\section}{0pt}{*1}{*1}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1\zw}{}
+\titlespacing{\subsection}{0pt}{*1}{*1}
+\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1\zw}{}
+\titlespacing{\subsubsection}{0pt}{*1}{*1}
+
+\pagestyle{empty}
+
+\SetLabelAlign{parright}{\parbox[t]{\labelwidth}{\raggedleft#1}}
+
+\makeatletter
+\def\@maketitle{
+\begin{flushright}
+{\large \@date}
+\end{flushright}
+\begin{center}
+{\LARGE \@title \par}
+\end{center}
+\begin{flushright}
+{\large \@author}
+\end{flushright}
+\par\vskip 1.5em
+}
+\makeatother
+
+\title{\huge タイトル \\
+\Large English Title }
+
+\author{
+T5-?? \: 学生氏名\\
+指導教員 \: 教員氏名
+}
+
+\date{}
+
+\begin{document}
+\twocolumn[
+  \maketitle
+]
+
+% ---------
+% ここに本文
+% --------
+本文テスト
+
+\bibliography{arxiv} % bibファイルを指定 (例: arxiv.bib)
+\bibliographystyle{junsrt}
+
+\end{document}
